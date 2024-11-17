@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Your Name</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-xKtRF6hJq4rcKU3ON+b4a4XjU9JKKxKixGyGbVzM9AOD3E6Tf1hMxS17ybHgfCNkjcNz+rGkctJ1D5TqXKqcsw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        /* Header Styles */
+        header {
+            position: relative;
+            text-align: center;
+            color: white;
+            background: linear-gradient(to right, #033150, #3cbddd);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        header .social-icons {
+            margin-top: 20px;
+        }
+        header .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: transform 0.2s;
+        }
+        header .social-icons a:hover {
+            transform: scale(1.2);
+        }
+        /* Navigation Bar */
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: center;
+            z-index: 1000;
+        }
+        nav a {
+            margin: 0 15px;
+            font-size: 1rem;
+            color: #333;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        nav a:hover {
+            color: #0d0b41;
+        }
+        /* About Section */
+        section#about {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        section#about h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        section#about p {
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        /* Projects Section */
+        section#projects {
+            padding: 60px 20px;
+            background-color: #f1f1f1;
+        }
+        section#projects h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .project-item {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .project-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .project-item img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        /* Contact Section */
+        section#contact {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        section#contact h2 {
+            margin-bottom: 20px;
+        }
+        section#contact form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+        }
+        section#contact input, 
+        section#contact textarea {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        section#contact button {
+            padding: 10px;
+            background-color: #0d0b41;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        section#contact button:hover {
+            background-color:#0d0b41;
+        }
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <header>
+        <h1>Shweta Sharma</h1>
+        <p>Software Developer | Designer | Problem Solver</p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav style="position: sticky; top: 0; background-color: #0d0b41; padding: 10px 20px;">
+        <ul style="display: flex; justify-content: space-around; list-style-type: none; margin: 0; padding: 0;">
+            <li><a href="#about" style="color: white; text-decoration: none;">about</a></li>
+            <li><a href="#projects" style="color: white; text-decoration: none;">projects</a></li>
+            <li><a href="#skills" style="color: white; text-decoration: none;">Skills</a></li>
+            <li><a href="#education" style="color: white; text-decoration: none;">Education</a></li>
+            <li><a href="#experience" style="color: white; text-decoration: none;">Experience</a></li>
+            <li><a href="#certifications" style="color: white; text-decoration: none;">certifications</a></li>
+            <li><a href="#achievements" style="color: white; text-decoration: none;">achievements</a></li>
+            <li><a href="#contact" style="color: white; text-decoration: none;">contact</a></li>
+        </ul>
+    </nav>
+    
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            I'm a passionate software developer specializing in building beautiful, functional, and scalable web applications.
+            I thrive on solving challenging problems and continuously expanding my skills.
+        </p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" style="padding: 40px;">
+        <h2 style="text-align: center; margin-bottom: 20px;">Projects</h2>
+        <div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
+            <div style="background-color: #fff; padding: 20px; border-radius: 10px; width: 30%; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                <h3>Hate Speech Detection</h3>
+                <p>To develop and implement a robust hate speech detection system using data science methodologies to accurately identify instances of hate speech in online content, thereby fostering safer and more inclusive digital environments.
+                </p>
+                <a href="https://github.com/shwetasharma2129/Hate-Speech-Detection.git" style="color: #0d0b41; text-decoration: none;">View Project</a>
+            </div>
+            <div style="background-color: #fff; padding: 20px; border-radius: 10px; width: 30%; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                <h3>Weather Forecast App</h3>
+                <p>To develop a Python-based weather forecasting application that fetches and displays weather data for a specified city using an API key from a weather service provider (e.g., OpenWeatherMap).</p>
+                <a href="https://github.com/shwetasharma2129/Weather-Forecasting-App.git" style="color: #0d0b41; text-decoration: none;">View Project</a>
+            </div>
+            <div style="background-color: #fff; padding: 20px; border-radius: 10px; width: 30%; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                <h3>Reminder-App</h3>
+                <p>A reminder application that allows users to set, manage, and receive notifications for tasks or events, enhancing productivity and ensuring timely completion of scheduled activities.</p>
+                <a href="https://github.com/shwetasharma2129/Reminder-App.git" style="color: #0d0b41; text-decoration: none;">View Project</a>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+    <section id="skills" style="padding: 40px; background-color: #f8f9fa; font-family: Arial, sans-serif;">
+        <h2 style="text-align: center; margin-bottom: 20px;">Skills</h2>
+
+            
+            <!-- Technical Skills -->
+            <div style="margin-bottom: 30px;">
+                <h3 style="color: #0d0b41;">Technical Skills</h3>
+                <ul style="display: flex; flex-wrap: wrap; padding-left: 0; list-style-type: none; margin-top: 10px;">
+                    <li style="background-color: #0d0b41; color: white; padding: 10px 15px; margin: 5px; border-radius: 5px;">Python</li>
+                    <li style="background-color: #0d0b41; color: white; padding: 10px 15px; margin: 5px; border-radius: 5px;">Java</li>
+                    <li style="background-color: #0d0b41; color: white; padding: 10px 15px; margin: 5px; border-radius: 5px;">HTML/CSS</li>
+                    <li style="background-color: #0d0b41; color: white; padding: 10px 15px; margin: 5px; border-radius: 5px;">C</li>
+                    <li style="background-color: #0d0b41; color: white; padding: 10px 15px; margin: 5px; border-radius: 5px;">Machine Learning</li>
+                    <li style="background-color: #0d0b41; color: white; padding: 10px 15px; margin: 5px; border-radius: 5px;">SQL</li>
+                    <li style="background-color: #0d0b41; color: white; padding: 10px 15px; margin: 5px; border-radius: 5px;">TensorFlow</li>
+                </ul>
+            </div>
+            
+            <!-- Soft Skills -->
+            <div>
+                <h3 style="color:#0d0b41;">Soft Skills</h3>
+                <ul style="display: flex; flex-wrap: wrap; padding-left: 0; list-style-type: none; margin-top: 10px;">
+                    <li style="background-color: #0d0b41; color: white; padding: 10px 15px; margin: 5px; border-radius: 5px;">Problem-solving</li>
+                    <li style="background-color: #0d0b41; color: white; padding: 10px 15px; margin: 5px; border-radius: 5px;">Communication</li>
+                    <li style="background-color: #0d0b41; color: white; padding: 10px 15px; margin: 5px; border-radius: 5px;">Teamwork</li>
+                    <li style="background-color: #0d0b41; color: white; padding: 10px 15px; margin: 5px; border-radius: 5px;">Time Management</li>
+                    <li style="background-color: #0d0b41; color: white; padding: 10px 15px; margin: 5px; border-radius: 5px;">Adaptability</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="education" style="padding: 40px; background-color: #f8f9fa; font-family: Arial, sans-serif;">
+        <h2 style="text-align: center; margin-bottom: 20px;">Education</h2>
+        <div style="max-width: 1000px; margin: 0 auto; line-height: 1.8;">
+            
+            <!-- Degree 1 -->
+            <div style="margin-bottom: 30px; border-bottom: 1px solid #ddd; padding-bottom: 20px;">
+                <h3 style="margin-bottom: 5px;">Bachelor of Technology in Electronics and Communication Engineering</h3>
+                <p style="margin: 0; color: #555;">SRM  University</p>
+                <p style="margin: 0; color: #777; font-size: 0.9rem;">September 2021 - June 2025</p>
+                <p style="margin-top: 10px; color: #555;">Relevant Courses: Data Structures, Algorithms, Web Development, Machine Learning,VLSI Design, Semiconductors and Design , Microprocessor and Microcontroller, Digital Image and Video Processing, Digital Electronics and Principles</p>
+            </div>
+            
+            <!-- Degree 2 -->
+            <div style="margin-bottom: 30px; border-bottom: 1px solid #ddd; padding-bottom: 20px;">
+                <h3 style="margin-bottom: 5px;">12th</h3>
+                <p style="margin: 0; color: #555;">Holy Mision Secondary School</p>
+                <p style="margin: 0; color: #777; font-size: 0.9rem;"> 2019-2020</p>
+                <p style="margin-top: 10px; color: #555;">Subjects: Physics, Chemistry, Maths, Fine Arts, English</p>
+            </div>
+
+            <div style="margin-bottom: 30px; border-bottom: 1px solid #ddd; padding-bottom: 20px;">
+                <h3 style="margin-bottom: 5px;">10th</h3>
+                <p style="margin: 0; color: #555;">South Point Public School</p>
+                <p style="margin: 0; color: #777; font-size: 0.9rem;"> 2017-2018</p>
+                <p style="margin-top: 10px; color: #555;">Subjects: Science,Social Science, Maths,Hindi,English</p>
+            </div>
+            
+        </div>
+    </section>
+    
+
+
+    <section id="experience" style="padding: 40px; background-color: #f8f9fa; font-family: Arial, sans-serif;">
+        <h2 style="text-align: center; margin-bottom: 20px;">Experience</h2>
+        <div style="max-width: 800px; margin: 0 auto; line-height: 1.8;">
+            <!-- Experience 1 -->
+            <div style="margin-bottom: 30px; border-bottom: 1px solid #ddd; padding-bottom: 20px;">
+                <h3 style="margin-bottom: 5px;">Software Developer Intern</h3>
+                <p style="margin: 0; color: #555;">Coincent</p>
+                <p style="margin: 0; color: #777; font-size: 0.9rem;">April 2024 - May 2024</p>
+                <ul style="margin-top: 10px; padding-left: 20px; color: #555;">
+                    <li>Worked on developing a Hate Speech Detection System using Natural Language Processing (NLP) techniques.</li>
+                    <li>Utilized Python and libraries such as TensorFlow, Keras, and Scikit-learn to build and train machine learning models.</li>
+                    <li>Employed data preprocessing techniques like tokenization, lemmatization, and vectorization (TF-IDF, Word2Vec) for text data.</li>
+                </ul>
+            </div>
+            
+    
+    </section>
+
+    <section id="certifications" style="padding: 40px; background-color: #f8f9fa; font-family: Arial, sans-serif;">
+        <h2 style="text-align: center; margin-bottom: 20px;">Certifications</h2>
+        
+        <div style="max-width: 1000px; margin: 0 auto; line-height: 1.8;">
+            
+            <!-- Certification 1 -->
+            <div style="margin-bottom: 30px; border-left: 5px solid  #0d0b41; padding-left: 20px;">
+                <h3 style="color: #0d0b41;">Software Engineer Intern</h3>
+                <p style="margin: 0; color: #555;">Coincent Institute, 2024</p>
+                <p style="margin-top: 10px; color: #777;">Completed an internship based on Data Science with Python focusing on machine learning, statistics, and data science techniques.</p>
+                <a href="https://drive.google.com/file/d/17gKIhFuAHzEQLadwSlWonIGWQFX8znM3/view?usp=drive_link" target="_blank" style="color: #0d0b41;">View Certificate</a>
+            </div>
+    
+            <!-- Certification 2 -->
+            <div style="margin-bottom: 30px; border-left: 5px solid #0d0b41; padding-left: 20px;">
+                <h3 style="color: #0d0b41;">Certificate of Accomplishment for Software Engineer Intern</h3>
+                <p style="margin: 0; color: #555;">HackerRank</p>
+                <p style="margin-top: 10px; color: #777;">Completed a skill certification test for Software Engineer Intern .</p>
+                <a href="https://drive.google.com/file/d/1MBmL_P7haLebvOmJfNSTyOL75ao5HBHt/view?usp=drive_link" target="_blank" style="color: #0d0b41;">View Certificate</a>
+            </div>
+    
+            <!-- Certification 3 -->
+            <div style="margin-bottom: 30px; border-left: 5px solid #0d0b41; padding-left: 20px;">
+                <h3 style="color: #0d0b41;">Certificate of Accomplishment</h3>
+                <p style="margin: 0; color: #555;">HackerRank</p>
+                <p style="margin-top: 10px; color: #777;">Completed a skill certification test using Python.</p>
+                <a href="https://drive.google.com/file/d/1-xaHZvbOvYy-7R45iTAOOEICB-ALinzy/view?usp=drive_link" target="_blank" style="color: #0d0b41;">View Certificate</a>
+            </div>
+    
+        </div>
+    </section>
+    
+    <section id="achievements" style="padding: 40px; background-color: #f8f9fa; font-family: Arial, sans-serif;">
+        <h2 style="text-align: center; margin-bottom: 20px;">Achievements</h2>
+        
+        <div style="max-width: 1000px; margin: 0 auto; line-height: 1.8;">
+            
+            <!-- Achievement 1 -->
+            <div style="margin-bottom: 30px; border-left: 5px solid #0d0b41; padding-left: 20px;">
+                <h3 style="color: #0d0b41;"> 5 Star Coder for Python on HackerRank</h3>
+                <p style="margin: 0; color: #555;">HackerRank</p>
+            </div>
+    
+            <!-- Achievement 2 -->
+            <div style="margin-bottom: 30px; border-left: 5px solid #0d0b41; padding-left: 20px;">
+                <h3 style="color: #0d0b41;"> 5 Star Coder for C on HackerRank</h3>
+                <p style="margin: 0; color: #555;">HackerRank</p>
+            </div>
+    
+            <!-- Achievement 3 -->
+            <div style="margin-bottom: 30px; border-left: 5px solid #0d0b41; padding-left: 20px;">
+                <h3 style="color: #0d0b41;"> Solved more than 150 DSA based questions on different coding platforms
+                </h3>
+                <p style="margin: 0; color: #555;">HackerRank,Leetcode,Intershala</p>
+            </div>
+    
+            <!-- Achievement 4 -->
+            <div style="margin-bottom: 30px; border-left: 5px solid #0d0b41; padding-left: 20px;">
+                <h3 style="color: #0d0b41;">Internship Recognition for Excellence</h3>
+                <p style="margin: 0; color: #555;">COINCENT, Summer 2024</p>
+                <p style="margin-top: 10px; color: #777;">Received recognition for outstanding contributions to the Hate Speech Detection project, exceeding expected milestones.</p>
+            </div>
+    
+        </div>
+    </section>
+    
+    
+    
+    
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background-color: #333; color: white; text-align: center; padding: 20px;">
+        <p>Follow me on:</p>
+        <a href="https://www.linkedin.com/in/shweta-sharma-9932852a5/" style="color: white; margin: 0 10px;">LinkedIn</a>
+        <a href="https://github.com/shwetasharma2129" style="color: white; margin: 0 10px;">GitHub</a>
+        <a href="shweta.sharma.1326@gmail.com" style="color: white; margin: 0 10px;">Email</a>
+    </footer>
+    
+    <footer>
+        <p>&copy; 2024 Shweta Sharma. All rights reserved.</p>
+    </footer>
+</body>
+</html>
